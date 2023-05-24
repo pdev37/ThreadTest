@@ -26,8 +26,8 @@ public class ThreadLocalTest {
         thread2.start();
     }
 
-    private ReentrantLock lock = new ReentrantLock();
-    Condition thread1Con = lock.newCondition();
+    private final ReentrantLock lock = new ReentrantLock();
+
     public static ThreadLocal<String> threadLocal = new ThreadLocal<>();
 
     private void syncBlockMethod1(String msg) {
